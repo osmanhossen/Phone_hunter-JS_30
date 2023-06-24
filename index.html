@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Phone Hunter!</title>
+  <style>
+    footer {
+      background-color: rgb(16, 3, 48);
+      padding: 5%;
+    }
+
+    .ul li {
+      display: inline-block;
+      align-items: center;
+    }
+
+    .ul li a {
+      font-size: 25px;
+      color: rgb(233, 163, 13);
+      transition: 0.5s;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+
+    .fo_header_area {
+      color: white;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="img/banner-pic-3.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="text-success fw-bold">Welcome Our Webstore</h2>
+            <p class="text-warning "> Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="img/banner-pic-1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="text-success fw-bold">Welcome Our Webstore</h2>
+            <p class="text-warning"> Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/banner-pic-2.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="text-success fw-bold">Welcome Our Webstore</h2>
+            <p class="text-warning"> Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container my-5 p-5 rounded">
+    <h1 class="text-center bg-info  py-3 mb-5  w-75 mx-auto rounded fw-bold text-success">Welcome To Phone Hunter...!!!
+    </h1>
+    <!-- Our Items -->
+    <h2 class="me-5 text-center my-4 text-info fw-bolder">Our Brand Phones</h2>
+    <ul class="my-3 text-center text-success w-50 mx-auto fs-3 d-md-flex d-lg-flex">
+      <li class="me-5">Apple</li>
+      <li class="me-5">Samsung</li>
+      <li class="me-5">Oppo</li>
+      <li class="me-5">Huawei</li>
+      <li class="me-5">Ipad</li>
+      <li class="me-5">Watch</li>
+
+    </ul>
+    <!--Search Phone Section  -->
+    <div class="d-flex align-items-center justify-content-center w-sm-100 w-md-50 w-lg-50 w-xl-50">
+      <input id="search_field" type="text" class="form-control py-2 px-3  mx-2 fw-bold fs-5 border rounded"
+        placeholder="Search Phone Model">
+      <a><button id="search_btn" onclick="" class="btn btn-warning me-2 fw-bold fs-5">Search</button></a>
+    </div>
+    <!-- No Phones Message -->
+    <div id="no-found-message" class="my-4 text-success text-center d-none">
+      <h2> Search No Found. Please Try Again New Search...</h2>
+    </div>
+
+    <!-- Spinner Section -->
+    <section>
+      <div style="height: 300px;" id="loading_show" class="d-flex justify-content-center align-items-center d-none">
+        <div class="spinner-grow text-warning m-3" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning m-3" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning m-3" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </section>
+    <!-- Collection Phones -->
+    <section>
+      <h1 class=" my-5 text-center fw-bolder text-success">Our New Collections</h1>
+      <div id="phone_container" class="row row-cols-1 row-cols-md-3 g-4 my-5">
+      </div>
+      <div id="showAllBtnSection" class="text-center d-none">
+        <button class="btn btn-info fs-3 fw-bold" id="showMoreBtn">Show More</button>
+      </div>
+    </section>
+    <!-- modal Section -->
+    <section>
+      <!-- Modal -->
+      <div class="modal fade" id="phoneDetails" tabindex="-1" aria-labelledby="phoneDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="phoneDetailsLabel"></h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="p_deatails" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer Area -->
+  <footer id="footer_area" class="paddingXL text-center">
+    <div class="container">
+      <div class="logo_area">
+        <h2 class="fo_header_area">Mohammad-Hridoy</h2>
+      </div>
+      <div class="socila_area">
+        <ul class="ul">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100008949189409" target="_blank"><i
+                class="fa-brands fa-facebook-f"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/osman_hossen818/" target="_blank"><i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/osman-hossen-2b098222b" target="_blank"><i
+                class="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="text-white">
+        <p>Copyright ©2022 All rights reserved | This template is made with <span>❤</span> By Hri_doy</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
