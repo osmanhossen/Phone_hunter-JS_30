@@ -50,7 +50,7 @@ const showPhones = (phones, phoneLimit) => {
             <div class="card-body">
               <h2 class="card-title text-info">Brand :  <span class="text-secondary">${phone.brand}</span></h2>
               <h2 class="card-title text-success"> ${phone.phone_name}</h2>
-              <h2 class="card-title text-danger">Price : $${price}</h2>
+              <h2 class="card-title text-danger">Price : $${price}.00</h2>
              <button onclick="showPhoneDetails('${phone.slug}')" class="btn btn-warning fw-bold fs-4" data-bs-toggle="modal" data-bs-target="#phoneDetails">Show Details</button>
             </div>
           </div>
