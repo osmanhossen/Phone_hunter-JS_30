@@ -31,17 +31,26 @@ const showPhones = (phones, phoneLimit) => {
   } else {
     noPhoneMessage.classList.add("d-none");
   }
+
   // display All phone
   phones.forEach((phone) => {
+    // random Price
+    // function randomPrice() {
+    //   const random = Math.round(Math.random() * 1000);
+    //   return random;
+    // }
+    // const price = randomPrice();
+    let price = Math.round(Math.random() * 1000);
+
     const phoneDiv = document.createElement("div");
     phoneDiv.classList.add("col");
     phoneDiv.innerHTML = `
     <div class="card h-100 p-4">
             <img src="${phone.image}" class="card-img-top " alt="...">
             <div class="card-body">
-              <h2 class="card-title text-secondary"> ${phone.brand}</h2>
+              <h2 class="card-title text-info">Brand :  <span class="text-secondary">${phone.brand}</span></h2>
               <h2 class="card-title text-success"> ${phone.phone_name}</h2>
-              <h2 class="card-title text-danger">Price : $ 650</h2>
+              <h2 class="card-title text-danger">Price : $${price}</h2>
              <button onclick="showPhoneDetails('${phone.slug}')" class="btn btn-warning fw-bold fs-4" data-bs-toggle="modal" data-bs-target="#phoneDetails">Show Details</button>
             </div>
           </div>
@@ -107,7 +116,7 @@ const displayPhoneDetails = (phone) => {
   }</span></h3>
   <h3 class="text-info">Sensors : <span class="text-success">${
     phone.mainFeatures.sensors
-  }</span></h3>
+  } </span></h3>
   <h3 class="text-info">ReleaseDate : <span class="text-success">${
     phone.releaseDate ? phone.releaseDate : "Release Date Not Published"
   }</span></h3>
